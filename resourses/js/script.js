@@ -82,10 +82,37 @@ $(document).ready(function () {
 		else{
 			icon.addClass('ion-navicon-round');
 			icon.removeClass('ion-close-round');	
+		}	
+	});
+	
+	
+	/* Maps */
+	var lng;
+	var form_box = $(".form-box");
+	if (form_box.width() == form_box.parent().width()){
+		var lng = 77.1633213;
+	}
+	else{
+		var lng = 77.175;
+	}
+	
+	var map = new GMaps({
+	  div: '.map',
+	  lat: 28.6749308,
+	  lng: lng
+	});
+	
+	map.addMarker({
+	  lat: 28.6749308,
+	  lng: 77.1633213,
+	  title: 'Delhi',
+	  infoWindow: {
+		  content: '<p>This is our HQ.</p>'
 		}
-			
-	})
+	});
+	
 });
+
 
 
 
